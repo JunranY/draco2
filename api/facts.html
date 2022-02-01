@@ -431,16 +431,15 @@ attribute or entity facts.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">({</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 <span class="n">facts</span>
 </pre></div>
 </div>

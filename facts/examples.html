@@ -373,6 +373,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">dict_union</span><span class="p">,</span> <span class="n">dict_to_facts</span><span class="p">,</span> <span class="n">check_spec</span><span class="p">,</span> <span class="n">get_violations</span>
 
+
 <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">spec</span> <span class="o">=</span> <span class="n">dict_union</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
     <span class="n">prog</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
@@ -393,19 +394,16 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="n">fields</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">{</span>
         <span class="s2">&quot;number_rows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-        <span class="p">}]</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]</span>
+        <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">x</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">fields</span>
+        <span class="p">],</span>
     <span class="p">}</span>
 </pre></div>
 </div>
@@ -418,19 +416,15 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tick Plot</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}]}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -455,19 +449,15 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tick Plot with a Log Scale</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}]}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -492,26 +482,24 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bar Chart</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;condition&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -546,25 +534,24 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;condition&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -595,27 +582,28 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Binned Histogram</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="kc">True</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="c1"># TODO: should this be linear? bin-linear?</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                <span class="c1"># TODO: should this be linear? bin-linear?</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -647,25 +635,24 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatterplot</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;wind&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -699,31 +686,26 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatterplot with Color</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;wind&#39;</span><span class="p">,</span> <span class="s1">&#39;condition&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;categorical&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;categorical&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -766,31 +748,26 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bubble Chart</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;wind&#39;</span><span class="p">,</span> <span class="s1">&#39;precipitation&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;precipitation&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -836,26 +813,21 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bar with a Tick</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}</span>
+                <span class="p">],</span>
+            <span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}]},</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -890,39 +862,37 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tick plot and histogram</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-            <span class="p">}]</span>
-        <span class="p">}],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-            <span class="p">},</span> <span class="p">{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span>
-            <span class="p">}]</span>
-        <span class="p">}],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-        <span class="p">},{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">}],</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -963,36 +933,34 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tick plot and histogram with shared y scale</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
-    <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-            <span class="p">}]</span>
-        <span class="p">}]</span>
-    <span class="p">},{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span>
-            <span class="p">},</span> <span class="p">{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span>
-            <span class="p">}]</span>
-        <span class="p">}],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span>
-    <span class="p">}]</span>
-<span class="p">})</span>
+<span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}],</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">}],</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
