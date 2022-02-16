@@ -331,13 +331,25 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="encodings">
 <h1>Encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p>Encodings define how <a class="reference internal" href="schema.html"><span class="doc std std-doc">data fields</span></a> map to visual properties (channel) of the <a class="reference internal" href="mark.html"><span class="doc std std-doc">mark</span></a>.</p>
 <div class="section" id="encoding-properties">
 <h2>Encoding Properties<a class="headerlink" href="#encoding-properties" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">(encoding,channel)</span></code>
+: The visual channel. One of <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, or <code class="docutils literal notranslate"><span class="pre">text</span></code>. Same as the <a class="reference internal" href="scale.html"><span class="doc std std-doc">scale channel</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(encoding,field)</span></code>
+: The field that maps to the visual property of the mark.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(encoding,aggregate)</span></code>
+: How the data is aggregated. One of <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">stdev</span></code>, or <code class="docutils literal notranslate"><span class="pre">sum</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(encoding,binning,N)</span></code>
+: How the data is binned into <code class="docutils literal notranslate"><span class="pre">N</span></code> bins.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(encoding,stack)</span></code>
+: One of <code class="docutils literal notranslate"><span class="pre">zero</span></code>, <code class="docutils literal notranslate"><span class="pre">center</span></code>, or <code class="docutils literal notranslate"><span class="pre">normalize</span></code>.</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">,</span><span class="s s-Atom">e1</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">channel</span><span class="p">),</span><span class="s s-Atom">e1</span><span class="p">,</span><span class="s s-Atom">x</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">field</span><span class="p">),</span><span class="s s-Atom">e1</span><span class="p">,</span><span class="s s-Atom">temperature</span><span class="p">).</span>
 </pre></div>
 </div>
 </div>
