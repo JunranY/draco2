@@ -42,14 +42,14 @@ show(
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAssertionError[0m                            Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2719/2832237263.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2926/2832237263.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m show(
 [0m[1;32m      2[0m     [0mdata[0m[0;34m([0m[0;34m[[0m[0;34m"temperature"[0m[0;34m][0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m     {
 [1;32m      4[0m         "mark": [
 [1;32m      5[0m             {
 
-[0;32m/tmp/ipykernel_2719/1848947746.py[0m in [0;36mshow[0;34m(*args)[0m
+[0;32m/tmp/ipykernel_2926/1848947746.py[0m in [0;36mshow[0;34m(*args)[0m
 [1;32m      8[0m         [0mprint[0m[0;34m([0m[0;34m"\n"[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mprog[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      9[0m         [0mprint[0m[0;34m([0m[0mget_violations[0m[0;34m([0m[0mprog[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 10[0;31m         [0;32massert[0m [0;32mFalse[0m[0;34m,[0m [0;34m"Invalid spec"[0m[0;34m[0m[0;34m[0m[0m
