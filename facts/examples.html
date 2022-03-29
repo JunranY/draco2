@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Overview" href="../api/intro.html" />
-    <link rel="prev" title="Tasks" href="task.html" />
+    <link rel="prev" title="Facets" href="facet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="task.html">
    Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="facet.html">
+   Facets
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -352,6 +357,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stacked-charts">
+   Stacked Charts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stacked-bar-chart">
+     Stacked Bar Chart
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalized-percentage-stacked-bar-chart">
+     Normalized (Percentage) Stacked Bar Chart
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multi-mark-layered-charts">
    Multi Mark (Layered) Charts
   </a>
@@ -359,6 +381,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bar-with-a-tick">
      Bar with a Tick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facets">
+   Facets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-into-columns">
+     Facet Scatterplot into Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-by-binned-data-into-columns">
+     Facet Scatterplot by Binned Data into Columns
     </a>
    </li>
   </ul>
@@ -453,6 +492,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stacked-charts">
+   Stacked Charts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stacked-bar-chart">
+     Stacked Bar Chart
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalized-percentage-stacked-bar-chart">
+     Normalized (Percentage) Stacked Bar Chart
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multi-mark-layered-charts">
    Multi Mark (Layered) Charts
   </a>
@@ -460,6 +516,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bar-with-a-tick">
      Bar with a Tick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facets">
+   Facets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-into-columns">
+     Facet Scatterplot into Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-by-binned-data-into-columns">
+     Facet Scatterplot by Binned Data into Columns
     </a>
    </li>
   </ul>
@@ -544,10 +617,17 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}]}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">}],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -558,14 +638,15 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,temperature).&#39;,
  &#39;attribute((field,name),temperature,temperature).&#39;,
  &#39;attribute((field,type),temperature,number).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,tick).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;entity(scale,root,2).&#39;,
- &#39;attribute((scale,channel),2,x).&#39;,
- &#39;attribute((scale,type),2,linear).&#39;]
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,tick).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(scale,0,3).&#39;,
+ &#39;attribute((scale,channel),3,x).&#39;,
+ &#39;attribute((scale,type),3,linear).&#39;]
 </pre></div>
 </div>
 </div>
@@ -579,10 +660,17 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}]}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span><span class="p">}],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -593,14 +681,15 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,temperature).&#39;,
  &#39;attribute((field,name),temperature,temperature).&#39;,
  &#39;attribute((field,type),temperature,number).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,tick).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;entity(scale,root,2).&#39;,
- &#39;attribute((scale,channel),2,x).&#39;,
- &#39;attribute((scale,type),2,log).&#39;]
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,tick).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(scale,0,3).&#39;,
+ &#39;attribute((scale,channel),3,x).&#39;,
+ &#39;attribute((scale,type),3,log).&#39;]
 </pre></div>
 </div>
 </div>
@@ -614,19 +703,27 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+                            <span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
                 <span class="p">],</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -640,22 +737,23 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,condition).&#39;,
  &#39;attribute((field,name),condition,condition).&#39;,
  &#39;attribute((field,type),condition,string).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,bar).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,condition).&#39;,
- &#39;entity(encoding,0,2).&#39;,
- &#39;attribute((encoding,channel),2,y).&#39;,
- &#39;attribute((encoding,field),2,temperature).&#39;,
- &#39;attribute((encoding,aggregate),2,mean).&#39;,
- &#39;entity(scale,root,3).&#39;,
- &#39;attribute((scale,channel),3,x).&#39;,
- &#39;attribute((scale,type),3,ordinal).&#39;,
- &#39;entity(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,y).&#39;,
- &#39;attribute((scale,type),4,linear).&#39;,
- &#39;attribute((scale,zero),4,true).&#39;]
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,bar).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,condition).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,temperature).&#39;,
+ &#39;attribute((encoding,aggregate),3,mean).&#39;,
+ &#39;entity(scale,0,4).&#39;,
+ &#39;attribute((scale,channel),4,x).&#39;,
+ &#39;attribute((scale,type),4,ordinal).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;attribute((scale,zero),5,true).&#39;]
 </pre></div>
 </div>
 </div>
@@ -669,19 +767,23 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
                 <span class="p">],</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -692,21 +794,22 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,condition).&#39;,
  &#39;attribute((field,name),condition,condition).&#39;,
  &#39;attribute((field,type),condition,string).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,bar).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,condition).&#39;,
- &#39;entity(encoding,0,2).&#39;,
- &#39;attribute((encoding,channel),2,y).&#39;,
- &#39;attribute((encoding,aggregate),2,count).&#39;,
- &#39;entity(scale,root,3).&#39;,
- &#39;attribute((scale,channel),3,x).&#39;,
- &#39;attribute((scale,type),3,ordinal).&#39;,
- &#39;entity(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,y).&#39;,
- &#39;attribute((scale,type),4,linear).&#39;,
- &#39;attribute((scale,zero),4,true).&#39;]
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,bar).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,condition).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,aggregate),3,count).&#39;,
+ &#39;entity(scale,0,4).&#39;,
+ &#39;attribute((scale,channel),4,x).&#39;,
+ &#39;attribute((scale,type),4,ordinal).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;attribute((scale,zero),5,true).&#39;]
 </pre></div>
 </div>
 </div>
@@ -720,22 +823,26 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
                 <span class="p">],</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span>
-            <span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -746,22 +853,23 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,temperature).&#39;,
  &#39;attribute((field,name),temperature,temperature).&#39;,
  &#39;attribute((field,type),temperature,number).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,bar).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;attribute((encoding,binning),1,10).&#39;,
- &#39;entity(encoding,0,2).&#39;,
- &#39;attribute((encoding,channel),2,y).&#39;,
- &#39;attribute((encoding,aggregate),2,count).&#39;,
- &#39;entity(scale,root,3).&#39;,
- &#39;attribute((scale,channel),3,x).&#39;,
- &#39;attribute((scale,type),3,linear).&#39;,
- &#39;entity(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,y).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,bar).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;attribute((encoding,binning),2,10).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,aggregate),3,count).&#39;,
+ &#39;entity(scale,0,4).&#39;,
+ &#39;attribute((scale,channel),4,x).&#39;,
  &#39;attribute((scale,type),4,linear).&#39;,
- &#39;attribute((scale,zero),4,true).&#39;]
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;attribute((scale,zero),5,true).&#39;]
 </pre></div>
 </div>
 </div>
@@ -775,19 +883,23 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
                 <span class="p">],</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -801,20 +913,21 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,wind).&#39;,
  &#39;attribute((field,name),wind,wind).&#39;,
  &#39;attribute((field,type),wind,number).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,point).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;entity(encoding,0,2).&#39;,
- &#39;attribute((encoding,channel),2,y).&#39;,
- &#39;attribute((encoding,field),2,wind).&#39;,
- &#39;entity(scale,root,3).&#39;,
- &#39;attribute((scale,channel),3,x).&#39;,
- &#39;attribute((scale,type),3,linear).&#39;,
- &#39;entity(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,y).&#39;,
- &#39;attribute((scale,type),4,linear).&#39;]
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,point).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,wind).&#39;,
+ &#39;entity(scale,0,4).&#39;,
+ &#39;attribute((scale,channel),4,x).&#39;,
+ &#39;attribute((scale,type),4,linear).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;]
 </pre></div>
 </div>
 </div>
@@ -828,21 +941,25 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;categorical&quot;</span><span class="p">},</span>
                 <span class="p">],</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;categorical&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -859,26 +976,27 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,condition).&#39;,
  &#39;attribute((field,name),condition,condition).&#39;,
  &#39;attribute((field,type),condition,string).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,point).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;entity(encoding,0,2).&#39;,
- &#39;attribute((encoding,channel),2,y).&#39;,
- &#39;attribute((encoding,field),2,wind).&#39;,
- &#39;entity(encoding,0,3).&#39;,
- &#39;attribute((encoding,channel),3,color).&#39;,
- &#39;attribute((encoding,field),3,condition).&#39;,
- &#39;entity(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,x).&#39;,
- &#39;attribute((scale,type),4,linear).&#39;,
- &#39;entity(scale,root,5).&#39;,
- &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,point).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,wind).&#39;,
+ &#39;entity(encoding,1,4).&#39;,
+ &#39;attribute((encoding,channel),4,color).&#39;,
+ &#39;attribute((encoding,field),4,condition).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,x).&#39;,
  &#39;attribute((scale,type),5,linear).&#39;,
- &#39;entity(scale,root,6).&#39;,
- &#39;attribute((scale,channel),6,color).&#39;,
- &#39;attribute((scale,type),6,categorical).&#39;]
+ &#39;entity(scale,0,6).&#39;,
+ &#39;attribute((scale,channel),6,y).&#39;,
+ &#39;attribute((scale,type),6,linear).&#39;,
+ &#39;entity(scale,0,7).&#39;,
+ &#39;attribute((scale,channel),7,color).&#39;,
+ &#39;attribute((scale,type),7,categorical).&#39;]
 </pre></div>
 </div>
 </div>
@@ -892,21 +1010,25 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;precipitation&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
                 <span class="p">],</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -923,26 +1045,175 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,precipitation).&#39;,
  &#39;attribute((field,name),precipitation,precipitation).&#39;,
  &#39;attribute((field,type),precipitation,number).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,point).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;entity(encoding,0,2).&#39;,
- &#39;attribute((encoding,channel),2,y).&#39;,
- &#39;attribute((encoding,field),2,wind).&#39;,
- &#39;entity(encoding,0,3).&#39;,
- &#39;attribute((encoding,channel),3,size).&#39;,
- &#39;attribute((encoding,field),3,precipitation).&#39;,
- &#39;entity(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,x).&#39;,
- &#39;attribute((scale,type),4,linear).&#39;,
- &#39;entity(scale,root,5).&#39;,
- &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,point).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,wind).&#39;,
+ &#39;entity(encoding,1,4).&#39;,
+ &#39;attribute((encoding,channel),4,size).&#39;,
+ &#39;attribute((encoding,field),4,precipitation).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,x).&#39;,
  &#39;attribute((scale,type),5,linear).&#39;,
- &#39;entity(scale,root,6).&#39;,
- &#39;attribute((scale,channel),6,size).&#39;,
- &#39;attribute((scale,type),6,linear).&#39;]
+ &#39;entity(scale,0,6).&#39;,
+ &#39;attribute((scale,channel),6,y).&#39;,
+ &#39;attribute((scale,type),6,linear).&#39;,
+ &#39;entity(scale,0,7).&#39;,
+ &#39;attribute((scale,channel),7,size).&#39;,
+ &#39;attribute((scale,type),7,linear).&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stacked-charts">
+<h2>Stacked Charts<a class="headerlink" href="#stacked-charts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stacked-bar-chart">
+<h3>Stacked Bar Chart<a class="headerlink" href="#stacked-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p><img alt="chart" src="../_images/stack.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;stack&quot;</span><span class="p">:</span> <span class="s2">&quot;zero&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;categorical&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
+ &#39;entity(field,root,temperature).&#39;,
+ &#39;attribute((field,name),temperature,temperature).&#39;,
+ &#39;attribute((field,type),temperature,number).&#39;,
+ &#39;entity(field,root,condition).&#39;,
+ &#39;attribute((field,name),condition,condition).&#39;,
+ &#39;attribute((field,type),condition,string).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,bar).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;attribute((encoding,binning),2,10).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,aggregate),3,count).&#39;,
+ &#39;attribute((encoding,stack),3,zero).&#39;,
+ &#39;entity(encoding,1,4).&#39;,
+ &#39;attribute((encoding,channel),4,color).&#39;,
+ &#39;attribute((encoding,field),4,condition).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,x).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;entity(scale,0,6).&#39;,
+ &#39;attribute((scale,channel),6,y).&#39;,
+ &#39;attribute((scale,type),6,linear).&#39;,
+ &#39;attribute((scale,zero),6,true).&#39;,
+ &#39;entity(scale,0,7).&#39;,
+ &#39;attribute((scale,channel),7,color).&#39;,
+ &#39;attribute((scale,type),7,categorical).&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="normalized-percentage-stacked-bar-chart">
+<h3>Normalized (Percentage) Stacked Bar Chart<a class="headerlink" href="#normalized-percentage-stacked-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p><img alt="chart" src="../_images/stack_normalize.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;stack&quot;</span><span class="p">:</span> <span class="s2">&quot;normalize&quot;</span><span class="p">,</span>
+                            <span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;categorical&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
+ &#39;entity(field,root,temperature).&#39;,
+ &#39;attribute((field,name),temperature,temperature).&#39;,
+ &#39;attribute((field,type),temperature,number).&#39;,
+ &#39;entity(field,root,condition).&#39;,
+ &#39;attribute((field,name),condition,condition).&#39;,
+ &#39;attribute((field,type),condition,string).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,bar).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,aggregate),2,count).&#39;,
+ &#39;attribute((encoding,stack),2,normalize).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,temperature).&#39;,
+ &#39;attribute((encoding,binning),3,10).&#39;,
+ &#39;entity(encoding,1,4).&#39;,
+ &#39;attribute((encoding,channel),4,color).&#39;,
+ &#39;attribute((encoding,field),4,condition).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,x).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;attribute((scale,zero),5,true).&#39;,
+ &#39;entity(scale,0,6).&#39;,
+ &#39;attribute((scale,channel),6,y).&#39;,
+ &#39;attribute((scale,type),6,linear).&#39;,
+ &#39;entity(scale,0,7).&#39;,
+ &#39;attribute((scale,channel),7,color).&#39;,
+ &#39;attribute((scale,type),7,categorical).&#39;]
 </pre></div>
 </div>
 </div>
@@ -958,16 +1229,27 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">]),</span>
     <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
+                            <span class="p">}</span>
+                        <span class="p">],</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}],</span>
+                    <span class="p">},</span>
                 <span class="p">],</span>
-            <span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">}]},</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">}],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">}],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
     <span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
@@ -978,21 +1260,161 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;entity(field,root,temperature).&#39;,
  &#39;attribute((field,name),temperature,temperature).&#39;,
  &#39;attribute((field,type),temperature,number).&#39;,
- &#39;entity(mark,root,0).&#39;,
- &#39;attribute((mark,type),0,bar).&#39;,
- &#39;entity(encoding,0,1).&#39;,
- &#39;attribute((encoding,channel),1,x).&#39;,
- &#39;attribute((encoding,aggregate),1,mean).&#39;,
- &#39;attribute((encoding,field),1,temperature).&#39;,
- &#39;entity(mark,root,2).&#39;,
- &#39;attribute((mark,type),2,tick).&#39;,
- &#39;entity(encoding,2,3).&#39;,
- &#39;attribute((encoding,channel),3,x).&#39;,
- &#39;attribute((encoding,field),3,temperature).&#39;,
- &#39;entity(scale,root,4).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,bar).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,aggregate),2,mean).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(mark,0,3).&#39;,
+ &#39;attribute((mark,type),3,tick).&#39;,
+ &#39;entity(encoding,3,4).&#39;,
+ &#39;attribute((encoding,channel),4,x).&#39;,
+ &#39;attribute((encoding,field),4,temperature).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,x).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;attribute((scale,zero),5,true).&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="facets">
+<h2>Facets<a class="headerlink" href="#facets" title="Permalink to this headline">¶</a></h2>
+<p>Facet produces horizontal or vertical small multiples.</p>
+<div class="section" id="facet-scatterplot-into-columns">
+<h3>Facet Scatterplot into Columns<a class="headerlink" href="#facet-scatterplot-into-columns" title="Permalink to this headline">¶</a></h3>
+<p><img alt="chart" src="../_images/facet.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;facet&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;col&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
+ &#39;entity(field,root,temperature).&#39;,
+ &#39;attribute((field,name),temperature,temperature).&#39;,
+ &#39;attribute((field,type),temperature,number).&#39;,
+ &#39;entity(field,root,wind).&#39;,
+ &#39;attribute((field,name),wind,wind).&#39;,
+ &#39;attribute((field,type),wind,number).&#39;,
+ &#39;entity(field,root,condition).&#39;,
+ &#39;attribute((field,name),condition,condition).&#39;,
+ &#39;attribute((field,type),condition,string).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,point).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,wind).&#39;,
+ &#39;entity(scale,0,4).&#39;,
  &#39;attribute((scale,channel),4,x).&#39;,
  &#39;attribute((scale,type),4,linear).&#39;,
- &#39;attribute((scale,zero),4,true).&#39;]
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;entity(facet,0,6).&#39;,
+ &#39;attribute((facet,channel),6,col).&#39;,
+ &#39;attribute((facet,field),6,condition).&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="facet-scatterplot-by-binned-data-into-columns">
+<h3>Facet Scatterplot by Binned Data into Columns<a class="headerlink" href="#facet-scatterplot-by-binned-data-into-columns" title="Permalink to this headline">¶</a></h3>
+<p><img alt="chart" src="../_images/facet_bin.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ordinal&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;facet&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;col&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
+ &#39;entity(field,root,temperature).&#39;,
+ &#39;attribute((field,name),temperature,temperature).&#39;,
+ &#39;attribute((field,type),temperature,number).&#39;,
+ &#39;entity(field,root,wind).&#39;,
+ &#39;attribute((field,name),wind,wind).&#39;,
+ &#39;attribute((field,type),wind,number).&#39;,
+ &#39;entity(field,root,condition).&#39;,
+ &#39;attribute((field,name),condition,condition).&#39;,
+ &#39;attribute((field,type),condition,string).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,point).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,x).&#39;,
+ &#39;attribute((encoding,field),2,condition).&#39;,
+ &#39;entity(encoding,1,3).&#39;,
+ &#39;attribute((encoding,channel),3,y).&#39;,
+ &#39;attribute((encoding,field),3,wind).&#39;,
+ &#39;entity(scale,0,4).&#39;,
+ &#39;attribute((scale,channel),4,x).&#39;,
+ &#39;attribute((scale,type),4,ordinal).&#39;,
+ &#39;entity(scale,0,5).&#39;,
+ &#39;attribute((scale,channel),5,y).&#39;,
+ &#39;attribute((scale,type),5,linear).&#39;,
+ &#39;entity(facet,0,6).&#39;,
+ &#39;attribute((facet,channel),6,col).&#39;,
+ &#39;attribute((facet,field),6,temperature).&#39;,
+ &#39;attribute((facet,binning),6,10).&#39;]
 </pre></div>
 </div>
 </div>
@@ -1182,11 +1604,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="task.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="facet.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tasks</p>
+            <p class="prev-next-title">Facets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../api/intro.html" title="next page">

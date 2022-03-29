@@ -140,6 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="facet.html">
+   Facets
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="examples.html">
    Example Charts
   </a>
@@ -335,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h1>
 <p>The mark represents the graphical mark of the visualization. Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5" title="Leland Wilkinson. The grammar of graphics. In Handbook of computational statistics, pages 375–414. Springer, 2012.">Wil12</a>]</span>. In the GoG, marks are described as Geometric objects (“geoms” for short). We use the term mark as that’s the term Vega-Lite <span id="id2">[<a class="reference internal" href="../bibliography.html#id3" title="Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer. Vega-lite: a grammar of interactive graphics. IEEE transactions on visualization and computer graphics, 2016.">SMWH16</a>]</span> uses.</p>
 <p>Marks have <a class="reference internal" href="encoding.html"><span class="doc std std-doc">encodings</span></a>, which define how data fields map to the mark’s visual properties.</p>
-<p>If you define multiple marks or a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the chart).</p>
+<p>If a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the chart).</p>
 <div class="section" id="mark-properties">
 <h2>Mark Properties<a class="headerlink" href="#mark-properties" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">(mark,type)</span></code>
@@ -343,7 +348,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">).</span>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">view</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">).</span>
+
+<span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">m</span><span class="p">,</span><span class="s s-Atom">tick</span><span class="p">).</span>
 <span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">,</span><span class="s s-Atom">e</span><span class="p">).</span>
 </pre></div>
