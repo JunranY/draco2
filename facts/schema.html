@@ -189,6 +189,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide.html">
+   How to customize or extend the knowledge base
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -366,6 +378,8 @@ const thebe_selector_output = ".output, .cell_output"
 : The type of the data in the column for this field. One of <code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, or <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,unique)</span></code>
 : The number of unique values.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(field,entropy)</span></code>
+: The entropy of the field. (To save a more accurate value, this field entropy value is 1000 times of the actual entropy).</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,min)</span></code>
 : The minimum value. Only used for numbers.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,max)</span></code>
@@ -383,6 +397,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">name</span><span class="p">),</span><span class="s s-Atom">f1</span><span class="p">,</span><span class="s s-Atom">date</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">f1</span><span class="p">,</span><span class="s s-Atom">datetime</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">unique</span><span class="p">),</span><span class="s s-Atom">f1</span><span class="p">,</span><span class="mi">1461</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">entropy</span><span class="p">),</span><span class="s s-Atom">f1</span><span class="p">,</span><span class="mi">7287</span><span class="p">).</span>
 
 <span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">f2</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">name</span><span class="p">),</span><span class="s s-Atom">f2</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">).</span>
@@ -391,12 +406,14 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">min</span><span class="p">),</span><span class="s s-Atom">f2</span><span class="p">,</span><span class="mi">0</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">max</span><span class="p">),</span><span class="s s-Atom">f2</span><span class="p">,</span><span class="mi">55</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">std</span><span class="p">),</span><span class="s s-Atom">f2</span><span class="p">,</span><span class="mi">6</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">entropy</span><span class="p">),</span><span class="s s-Atom">f1</span><span class="p">,</span><span class="mi">2422</span><span class="p">).</span>
 
 <span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">f3</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">name</span><span class="p">),</span><span class="s s-Atom">f3</span><span class="p">,</span><span class="s s-Atom">weather</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">f3</span><span class="p">,</span><span class="s s-Atom">string</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">unique</span><span class="p">),</span><span class="s s-Atom">f3</span><span class="p">,</span><span class="mi">5</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">freq</span><span class="p">),</span><span class="s s-Atom">f3</span><span class="p">,</span><span class="mi">714</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">entropy</span><span class="p">),</span><span class="s s-Atom">f1</span><span class="p">,</span><span class="mi">1201</span><span class="p">).</span>
 </pre></div>
 </div>
 </div>

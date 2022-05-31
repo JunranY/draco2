@@ -189,6 +189,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide.html">
+   How to customize or extend the knowledge base
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -419,7 +431,7 @@ concatenated.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="draco.run.run_clingo">
-<span class="sig-prename descclassname"><span class="pre">draco.run.</span></span><span class="sig-name descname"><span class="pre">run_clingo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topK</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.run_clingo" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">draco.run.</span></span><span class="sig-name descname"><span class="pre">run_clingo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topK</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.run_clingo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the solver and yield the models.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -429,6 +441,11 @@ concatenated.</p></li>
 <li><p><strong>models</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of models to generate, defaults to 0 (meaning all models).</p></li>
 <li><p><strong>topK</strong> – Whether to return the top K models. If false (default), the program
 will not optimize the output models.</p></li>
+<li><p><strong>arguments</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Arguments to the clingo grounder and solver.
+Only gringo options (without –text) and clasp’s search options are supported.
+For example, you can use [“-c foo=5”] to override the occurrences of
+constant “foo” in your input program.
+Refer to the potassco guide for the options.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Yield</dt>

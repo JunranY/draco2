@@ -189,6 +189,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide.html">
+   How to customize or extend the knowledge base
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -432,32 +444,43 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;number_rows&#39;: 1461,
- &#39;field&#39;: [{&#39;name&#39;: &#39;date&#39;, &#39;type&#39;: &#39;datetime&#39;, &#39;unique&#39;: 1461},
+ &#39;field&#39;: [{&#39;name&#39;: &#39;date&#39;,
+   &#39;type&#39;: &#39;datetime&#39;,
+   &#39;unique&#39;: 1461,
+   &#39;entropy&#39;: 7287},
   {&#39;name&#39;: &#39;precipitation&#39;,
    &#39;type&#39;: &#39;number&#39;,
    &#39;unique&#39;: 111,
+   &#39;entropy&#39;: 2422,
    &#39;min&#39;: 0,
    &#39;max&#39;: 55,
    &#39;std&#39;: 6},
   {&#39;name&#39;: &#39;temp_max&#39;,
    &#39;type&#39;: &#39;number&#39;,
    &#39;unique&#39;: 67,
+   &#39;entropy&#39;: 3934,
    &#39;min&#39;: -1,
    &#39;max&#39;: 35,
    &#39;std&#39;: 7},
   {&#39;name&#39;: &#39;temp_min&#39;,
    &#39;type&#39;: &#39;number&#39;,
    &#39;unique&#39;: 55,
+   &#39;entropy&#39;: 3596,
    &#39;min&#39;: -7,
    &#39;max&#39;: 18,
    &#39;std&#39;: 5},
   {&#39;name&#39;: &#39;wind&#39;,
    &#39;type&#39;: &#39;number&#39;,
    &#39;unique&#39;: 79,
+   &#39;entropy&#39;: 3950,
    &#39;min&#39;: 0,
    &#39;max&#39;: 9,
    &#39;std&#39;: 1},
-  {&#39;name&#39;: &#39;weather&#39;, &#39;type&#39;: &#39;string&#39;, &#39;unique&#39;: 5, &#39;freq&#39;: 714}]}
+  {&#39;name&#39;: &#39;weather&#39;,
+   &#39;type&#39;: &#39;string&#39;,
+   &#39;unique&#39;: 5,
+   &#39;entropy&#39;: 1201,
+   &#39;freq&#39;: 714}]}
 </pre></div>
 </div>
 </div>
@@ -475,10 +498,12 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;attribute((field,name),0,date).&#39;,
  &#39;attribute((field,type),0,datetime).&#39;,
  &#39;attribute((field,unique),0,1461).&#39;,
+ &#39;attribute((field,entropy),0,7287).&#39;,
  &#39;entity(field,root,1).&#39;,
  &#39;attribute((field,name),1,precipitation).&#39;,
  &#39;attribute((field,type),1,number).&#39;,
  &#39;attribute((field,unique),1,111).&#39;,
+ &#39;attribute((field,entropy),1,2422).&#39;,
  &#39;attribute((field,min),1,0).&#39;,
  &#39;attribute((field,max),1,55).&#39;,
  &#39;attribute((field,std),1,6).&#39;,
@@ -486,6 +511,7 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;attribute((field,name),2,temp_max).&#39;,
  &#39;attribute((field,type),2,number).&#39;,
  &#39;attribute((field,unique),2,67).&#39;,
+ &#39;attribute((field,entropy),2,3934).&#39;,
  &#39;attribute((field,min),2,-1).&#39;,
  &#39;attribute((field,max),2,35).&#39;,
  &#39;attribute((field,std),2,7).&#39;,
@@ -493,6 +519,7 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;attribute((field,name),3,temp_min).&#39;,
  &#39;attribute((field,type),3,number).&#39;,
  &#39;attribute((field,unique),3,55).&#39;,
+ &#39;attribute((field,entropy),3,3596).&#39;,
  &#39;attribute((field,min),3,-7).&#39;,
  &#39;attribute((field,max),3,18).&#39;,
  &#39;attribute((field,std),3,5).&#39;,
@@ -500,6 +527,7 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;attribute((field,name),4,wind).&#39;,
  &#39;attribute((field,type),4,number).&#39;,
  &#39;attribute((field,unique),4,79).&#39;,
+ &#39;attribute((field,entropy),4,3950).&#39;,
  &#39;attribute((field,min),4,0).&#39;,
  &#39;attribute((field,max),4,9).&#39;,
  &#39;attribute((field,std),4,1).&#39;,
@@ -507,6 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;attribute((field,name),5,weather).&#39;,
  &#39;attribute((field,type),5,string).&#39;,
  &#39;attribute((field,unique),5,5).&#39;,
+ &#39;attribute((field,entropy),5,1201).&#39;,
  &#39;attribute((field,freq),5,714).&#39;]
 </pre></div>
 </div>

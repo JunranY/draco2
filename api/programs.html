@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="next" title="How to customize or extend the knowledge base" href="../guide.html" />
     <link rel="prev" title="Fact Utils" href="facts.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -184,6 +184,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Programs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide.html">
+   How to customize or extend the knowledge base
   </a>
  </li>
 </ul>
@@ -326,17 +338,18 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="programs">
+  <!-- #region -->
+<div class="tex2jax_ignore mathjax_ignore section" id="programs">
 <h1>Programs<a class="headerlink" href="#programs" title="Permalink to this headline">¶</a></h1>
-<p>Draco exposes the following programs.</p>
+<p>Draco loads its programs from the <a class="reference external" href="https://github.com/cmudig/draco2/tree/main/draco/asp">asp</a> directory that contains the Draco knowledge base as answer set programs. Draco exposes the following programs.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">definitions</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">constraints</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">generate</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hard</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">helpers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">definitions</span></code>: loads from <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/define.lp"><code class="docutils literal notranslate"><span class="pre">define.lp</span></code></a> that declares the domains to visualization attributes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constraints</span></code>: loads from <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/constraints.lp"><code class="docutils literal notranslate"><span class="pre">constraints.lp</span></code></a> that restricts the search space to follow the correct draco general description language.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generate</span></code>: loads from <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/generate.lp"><code class="docutils literal notranslate"><span class="pre">generate.lp</span></code></a> that sets up the search space.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hard</span></code>: loads from <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/hard.lp"><code class="docutils literal notranslate"><span class="pre">hard.lp</span></code></a> that restricts the search space to only well-formed and expressive specifications.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">helpers</span></code>: loads from <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/helpers.lp"><code class="docutils literal notranslate"><span class="pre">helpers.lp</span></code></a> that defines useful helper functions.</p></li>
 </ul>
-<p>Draco loads these programs from files.</p>
+<p>Additionally, the asp directory contains a <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/soft.lp"><code class="docutils literal notranslate"><span class="pre">soft.lp</span></code></a> that defines soft constraints in the form of violation/1 and violation/2 predicates. By themselves, these predicates don’t change the search.</p>
 <div class="section" id="options-for-each-program">
 <h2>Options for Each Program<a class="headerlink" href="#options-for-each-program" title="Permalink to this headline">¶</a></h2>
 <dl class="py data">
@@ -388,6 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
 </dl>
 </dd></dl>
 
+<!-- #endregion -->
 </div>
 </div>
 
@@ -423,10 +437,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">Fact Utils</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="../guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">How to customize or extend the knowledge base</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
