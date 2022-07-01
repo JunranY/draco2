@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fact Utils" href="facts.html" />
-    <link rel="prev" title="Specifications" href="spec.html" />
+    <link rel="prev" title="Read Data and Generate the Schema" href="schema.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -177,13 +177,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="schema.html">
-   Read Data and Generate the Schema
+  <a class="reference internal" href="draco.html">
+   Draco Helper Class
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="spec.html">
-   Specifications
+  <a class="reference internal" href="schema.html">
+   Read Data and Generate the Schema
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -500,7 +500,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="run">
 <h1>Run<a class="headerlink" href="#run" title="Permalink to this headline">#</a></h1>
 <p>Draco can run programs in the Clingo solver. <code class="docutils literal notranslate"><span class="pre">draco.run</span></code> exposes the low-level functions to run a program in the solver and get back the satisfying models with the answer sets.</p>
-<p>Draco uses these methods in the <a class="reference internal" href="spec.html"><span class="doc std std-doc">high-level APIs for checking specifications</span></a>. If you use this API, make sure to read the <a class="reference external" href="https://potassco.org/clingo/python-api/current/">documentation of the Clingo Python API</a>. It covers how to work with answer sets and symbols.</p>
+<p>Draco uses these methods in the <a class="reference internal" href="draco.html"><span class="doc std std-doc">high-level APIs for checking specifications</span></a>. If you use this API, make sure to read the <a class="reference external" href="https://potassco.org/clingo/python-api/current/">documentation of the Clingo Python API</a>. It covers how to work with answer sets and symbols.</p>
 <section id="module-draco.run">
 <span id="available-functions"></span><h2>Available functions<a class="headerlink" href="#module-draco.run" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
@@ -546,7 +546,7 @@ and weight).</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="draco.run.is_satisfiable">
 <span class="sig-prename descclassname"><span class="pre">draco.run.</span></span><span class="sig-name descname"><span class="pre">is_satisfiable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.is_satisfiable" title="Permalink to this definition">#</a></dt>
-<dd><p>Checks whether the program is satisfiable</p>
+<dd><p>Checks whether the program is satisfiable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>program</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Program as a string or iterable of strings that will be
@@ -647,11 +647,11 @@ b
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="spec.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="schema.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Specifications</p>
+            <p class="prev-next-title">Read Data and Generate the Schema</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="facts.html" title="next page">
