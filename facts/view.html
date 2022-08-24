@@ -486,12 +486,14 @@ title="Print to PDF"
 <p>If a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the chart).</p>
 <section id="view-properties">
 <h2>View Properties<a class="headerlink" href="#view-properties" title="Permalink to this headline">#</a></h2>
-<p>By default, views don’t have any properties.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(view,coordinates)</span></code>
+: The coordinates system of the view. Can be one of <code class="docutils literal notranslate"><span class="pre">cartesian</span></code>, or <code class="docutils literal notranslate"><span class="pre">polar</span></code>.</p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
 <p>Here, we define a single view <code class="docutils literal notranslate"><span class="pre">v</span></code> of a tick plot.</p>
 <div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">view</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">view</span><span class="p">,</span><span class="s s-Atom">coordinates</span><span class="p">),</span><span class="s s-Atom">v</span><span class="p">,</span><span class="s s-Atom">cartesian</span><span class="p">).</span>
 
 <span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">m</span><span class="p">,</span><span class="s s-Atom">tick</span><span class="p">).</span>
