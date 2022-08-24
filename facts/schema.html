@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -204,13 +204,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/recommendation.html">
+   Visualization Recommendation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Guide
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../guide.html">
-   How to customize or extend the knowledge base
+   Guides
   </a>
  </li>
 </ul>
@@ -482,7 +494,7 @@ title="Print to PDF"
 <h1>Data and Schema<a class="headerlink" href="#data-and-schema" title="Permalink to this headline">#</a></h1>
 <p>In Draco, you can describe what you know about the dataset and the fields in the data. There can be only one dataset in a Draco program.</p>
 <p>Besides general statistics about the whole dataset, the schema has information about field types and field statistics.</p>
-<p>You can use Draco’s <a class="reference internal" href="../api/schema.html"><span class="doc std std-doc">data schema API</span></a> to generate a schema description from a file or Pandas dataframe.</p>
+<p>You can use Draco’s <a class="reference internal" href="../api/schema.html"><span class="doc std std-doc">data schema API</span></a> to generate a schema description from a file or <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas dataframe</a>.</p>
 <section id="dataset-properties">
 <h2>Dataset Properties<a class="headerlink" href="#dataset-properties" title="Permalink to this headline">#</a></h2>
 <p>General properties of the dataset that are not specific to a field are properties of the root.</p>
@@ -491,7 +503,7 @@ title="Print to PDF"
 </section>
 <section id="field-properties">
 <h2>Field Properties<a class="headerlink" href="#field-properties" title="Permalink to this headline">#</a></h2>
-<p>Draco can use information about the field type and field statistics. Each field entity is associated with a field. The facts therefore have the form of e.g. <code class="docutils literal notranslate"><span class="pre">attribute((field,type),foo,number).</span></code> (read as <em>the type of the foo field is number</em>). For each field, there should be a entity fact <code class="docutils literal notranslate"><span class="pre">entity</span></code> that tells Draco that the field exists on the root (e.g. <code class="docutils literal notranslate"><span class="pre">entity(field,root,foo).</span></code>).</p>
+<p>Draco can use information about the field type and field statistics. Each field entity is associated with a field. The facts therefore have the form of e.g. <code class="docutils literal notranslate"><span class="pre">attribute((field,type),foo,number).</span></code> (read as <em>the type of the foo field is number</em>). For each field, there should be an entity fact <code class="docutils literal notranslate"><span class="pre">entity</span></code> that tells Draco that the field exists on the root (e.g. <code class="docutils literal notranslate"><span class="pre">entity(field,root,foo).</span></code>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,name)</span></code>
 : The name of the field.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,type)</span></code>

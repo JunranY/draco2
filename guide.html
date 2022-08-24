@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How to customize or extend the knowledge base &#8212; Draco</title>
+    <title>Guides &#8212; Draco</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bibliography" href="bibliography.html" />
-    <link rel="prev" title="Programs" href="api/programs.html" />
+    <link rel="prev" title="Visualization Recommendation" href="applications/recommendation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -204,13 +204,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="applications/recommendation.html">
+   Visualization Recommendation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Guide
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   How to customize or extend the knowledge base
+   Guides
   </a>
  </li>
 </ul>
@@ -449,8 +461,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#guideline">
-   guideline
+  <a class="reference internal nav-link" href="#how-to-customize-or-extend-the-knowledge-base">
+   How to customize or extend the knowledge base
   </a>
  </li>
 </ul>
@@ -462,7 +474,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>How to customize or extend the knowledge base</h1>
+                <h1>Guides</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -473,8 +485,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#guideline">
-   guideline
+  <a class="reference internal nav-link" href="#how-to-customize-or-extend-the-knowledge-base">
+   How to customize or extend the knowledge base
   </a>
  </li>
 </ul>
@@ -487,13 +499,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="how-to-customize-or-extend-the-knowledge-base">
-<h1>How to customize or extend the knowledge base<a class="headerlink" href="#how-to-customize-or-extend-the-knowledge-base" title="Permalink to this headline">#</a></h1>
-<section id="guideline">
-<h2>guideline<a class="headerlink" href="#guideline" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="guides">
+<h1>Guides<a class="headerlink" href="#guides" title="Permalink to this headline">#</a></h1>
+<section id="how-to-customize-or-extend-the-knowledge-base">
+<h2>How to customize or extend the knowledge base<a class="headerlink" href="#how-to-customize-or-extend-the-knowledge-base" title="Permalink to this headline">#</a></h2>
 <p>You can design your own description language and use it with Draco or extend the existing language we use here. If you don’t know where to start with the constraints, you can first use our <a class="reference external" href="https://dig.cmu.edu/draco2/api/run.html#draco.run.run_clingo"><code class="docutils literal notranslate"><span class="pre">run_clingo</span></code></a> and <a class="reference external" href="https://dig.cmu.edu/draco2/api/programs.html"><code class="docutils literal notranslate"><span class="pre">programs</span></code></a> API to generate some recommendations. Then, you should be able to find some recommendations that should have been left out, and you can write constraints to reflect them.<br />
-If you write your own despription language, you need to set up the search space in a similar way to <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/generate.lp"><code class="docutils literal notranslate"><span class="pre">generate.lp</span></code></a> before trying to generate recommendations.</p>
-<p>For example, the following snippet shows how to use the <code class="docutils literal notranslate"><span class="pre">run_clingo</span></code> API to generate 1 recommendation. You can set a different number to look into more results.</p>
+If you write your own description language, you need to set up the search space in a similar way to <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/generate.lp"><code class="docutils literal notranslate"><span class="pre">generate.lp</span></code></a> before trying to generate recommendations.</p>
+<p>For example, the following snippet shows how to use the <code class="docutils literal notranslate"><span class="pre">run_clingo</span></code> API to generate one recommendation. You can set a different number to look into more results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">answer_set_to_dict</span><span class="p">,</span> <span class="n">run_clingo</span>
@@ -548,32 +560,20 @@ If you write your own despription language, you need to set up the search space 
                      &#39;encoding&#39;: [{&#39;aggregate&#39;: &#39;stdev&#39;,
                                    &#39;channel&#39;: &#39;color&#39;,
                                    &#39;field&#39;: (&#39;f&#39;, 0),
-                                   &#39;scale_type&#39;: &#39;linear&#39;,
-                                   &#39;type&#39;: &#39;linear&#39;},
-                                  {&#39;aggregate&#39;: &#39;stdev&#39;,
+                                   &#39;scale_type&#39;: &#39;linear&#39;},
+                                  {&#39;aggregate&#39;: &#39;median&#39;,
                                    &#39;channel&#39;: &#39;text&#39;,
                                    &#39;field&#39;: (&#39;f&#39;, 1),
-                                   &#39;scale_type&#39;: &#39;linear&#39;,
-                                   &#39;type&#39;: &#39;linear&#39;}],
+                                   &#39;scale_type&#39;: &#39;linear&#39;}],
                      &#39;mark_channel_cont&#39;: &#39;text&#39;,
                      &#39;mark_encoding_cont&#39;: (&#39;e&#39;, 1),
-                     &#39;scale&#39;: (&#39;e&#39;, 0),
+                     &#39;scale&#39;: (&#39;s&#39;, 1),
                      &#39;type&#39;: &#39;text&#39;,
                      &#39;x_cardinality&#39;: 1,
                      &#39;y_cardinality&#39;: 1}],
-           &#39;scale&#39;: [{&#39;type&#39;: &#39;linear&#39;},
-                     {&#39;type&#39;: &#39;linear&#39;},
-                     {&#39;aggregate&#39;: &#39;stdev&#39;,
-                      &#39;channel&#39;: &#39;text&#39;,
-                      &#39;field&#39;: (&#39;f&#39;, 1),
-                      &#39;scale_type&#39;: &#39;linear&#39;,
-                      &#39;type&#39;: &#39;linear&#39;},
-                     {&#39;aggregate&#39;: &#39;stdev&#39;,
-                      &#39;channel&#39;: &#39;color&#39;,
-                      &#39;field&#39;: (&#39;f&#39;, 0),
-                      &#39;scale_type&#39;: &#39;linear&#39;,
-                      &#39;type&#39;: &#39;linear&#39;}]}]}
-[attribute(number_rows,root,100), attribute((field,name),(f,0),temperature), attribute((field,type),(f,0),number), attribute((field,name),(f,1),precipitation), attribute((field,type),(f,1),number), attribute((encoding,field),(e,0),(f,0)), attribute((encoding,field),(e,1),(f,1)), attribute(task,root,value), attribute((encoding,aggregate),(e,1),stdev), attribute((encoding,aggregate),(e,0),stdev), attribute((scale,type),(s,1),linear), attribute((scale,type),(s,0),linear), attribute((encoding,channel),(e,1),text), attribute((encoding,channel),(e,0),color), attribute((mark,type),(m,0),text), attribute((scale,type),(e,0),linear), attribute((scale,type),(e,1),linear), attribute((scale,channel),(e,1),text), attribute((scale,channel),(e,0),color), attribute((mark,channel),(m,0),color), attribute((mark,channel),(m,0),text), attribute((mark,scale),(m,0),(s,0)), attribute((mark,scale),(m,0),(s,1)), attribute((mark,scale),(m,0),(e,1)), attribute((mark,scale),(m,0),(e,0)), attribute((encoding,scale_type),(e,0),linear), attribute((encoding,scale_type),(e,1),linear), attribute(mark_encoding_cont,(m,0),(e,0)), attribute(mark_encoding_cont,(m,0),(e,1)), attribute(mark_channel_cont,(m,0),color), attribute(mark_channel_cont,(m,0),text), attribute(x_cardinality,(m,0),1), attribute(y_cardinality,(m,0),1), entity(field,root,(f,0)), entity(field,root,(f,1)), entity(view,root,(v,0)), entity(mark,(v,0),(m,0)), entity(encoding,(m,0),(e,0)), entity(encoding,(m,0),(e,1)), entity(scale,(v,0),(s,0)), entity(scale,(v,0),(s,1)), entity(scale,(v,0),(e,1)), entity(scale,(v,0),(e,0))]
+           &#39;scale&#39;: [{&#39;channel&#39;: &#39;text&#39;, &#39;type&#39;: &#39;linear&#39;},
+                     {&#39;channel&#39;: &#39;color&#39;, &#39;type&#39;: &#39;linear&#39;}]}]}
+[attribute(number_rows,root,100), attribute((field,name),(f,0),temperature), attribute((field,type),(f,0),number), attribute((field,name),(f,1),precipitation), attribute((field,type),(f,1),number), attribute((encoding,field),(e,0),(f,0)), attribute((encoding,field),(e,1),(f,1)), attribute(task,root,value), attribute((encoding,aggregate),(e,1),median), attribute((encoding,aggregate),(e,0),stdev), attribute((scale,type),(s,1),linear), attribute((scale,channel),(s,1),color), attribute((scale,type),(s,0),linear), attribute((scale,channel),(s,0),text), attribute((encoding,channel),(e,1),text), attribute((encoding,channel),(e,0),color), attribute((mark,type),(m,0),text), attribute((mark,channel),(m,0),color), attribute((mark,channel),(m,0),text), attribute((mark,scale),(m,0),(s,0)), attribute((mark,scale),(m,0),(s,1)), attribute((encoding,scale_type),(e,0),linear), attribute((encoding,scale_type),(e,1),linear), attribute(mark_encoding_cont,(m,0),(e,0)), attribute(mark_encoding_cont,(m,0),(e,1)), attribute(mark_channel_cont,(m,0),color), attribute(mark_channel_cont,(m,0),text), attribute(x_cardinality,(m,0),1), attribute(y_cardinality,(m,0),1), entity(field,root,(f,0)), entity(field,root,(f,1)), entity(view,root,(v,0)), entity(mark,(v,0),(m,0)), entity(encoding,(m,0),(e,0)), entity(encoding,(m,0),(e,1)), entity(scale,(v,0),(s,0)), entity(scale,(v,0),(s,1))]
 </pre></div>
 </div>
 </div>
@@ -587,11 +587,13 @@ If you write your own despription language, you need to set up the search space 
 <ul class="simple">
 <li><p>check if some of your constraints are too tight, and move them to soft constraints</p></li>
 </ul>
-<p>If you see no recommendations, you might have made mistakes in the hard constraints. You can allow violations to check what are the common ones by removing the <code class="docutils literal notranslate"><span class="pre">violation</span></code> constriant, which forbids any violations, from the programs. Below is an example:</p>
+<p>If you see no recommendations, you might have made mistakes in the hard constraints. You can allow violations to check what are the common ones by removing the <code class="docutils literal notranslate"><span class="pre">violation</span></code> constraint, which forbids any violations, from the programs. Below is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">get_violations</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">Draco</span>
 <span class="kn">from</span> <span class="nn">draco.asp_utils</span> <span class="kn">import</span> <span class="n">blocks_to_program</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">Draco</span><span class="p">()</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="n">blocks_to_program</span><span class="p">(</span>
@@ -604,23 +606,32 @@ If you write your own despription language, you need to set up the search space 
     <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">)</span>
     <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">get_violations</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_violations</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">get_violations</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">draco.asp_utils</span> <span class="kn">import</span> <span class="n">blocks_to_program</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">blocks_to_program</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="n">constraints</span><span class="o">.</span><span class="n">blocks</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">constraints</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;violation&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;get_violations&#39; from &#39;draco&#39; (/home/runner/work/draco2/draco2/draco/__init__.py)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;field&#39;: [{&#39;name&#39;: &#39;temperature&#39;, &#39;type&#39;: &#39;number&#39;},
+           {&#39;name&#39;: &#39;precipitation&#39;, &#39;type&#39;: &#39;number&#39;}],
+ &#39;number_rows&#39;: 100,
+ &#39;task&#39;: &#39;value&#39;,
+ &#39;view&#39;: [{&#39;mark&#39;: [{&#39;channel&#39;: &#39;text&#39;,
+                     &#39;encoding&#39;: [{&#39;channel&#39;: &#39;text&#39;,
+                                   &#39;field&#39;: (&#39;f&#39;, 0),
+                                   &#39;scale_type&#39;: &#39;categorical&#39;},
+                                  {&#39;channel&#39;: &#39;shape&#39;, &#39;field&#39;: (&#39;f&#39;, 1)}],
+                     &#39;mark_channel_cont&#39;: &#39;shape&#39;,
+                     &#39;mark_channel_discrete_or_binned&#39;: &#39;text&#39;,
+                     &#39;mark_encoding_cont&#39;: (&#39;e&#39;, 1),
+                     &#39;mark_encoding_discrete_or_binned&#39;: (&#39;e&#39;, 0),
+                     &#39;scale&#39;: (&#39;s&#39;, 1),
+                     &#39;type&#39;: &#39;tick&#39;,
+                     &#39;x_cardinality&#39;: 1,
+                     &#39;y_cardinality&#39;: 1}],
+           &#39;scale&#39;: [{&#39;channel&#39;: &#39;text&#39;, &#39;type&#39;: &#39;categorical&#39;},
+                     {&#39;channel&#39;: &#39;text&#39;, &#39;type&#39;: &#39;categorical&#39;}]}]}
+[attribute(number_rows,root,100), attribute((field,name),(f,0),temperature), attribute((field,type),(f,0),number), attribute((field,name),(f,1),precipitation), attribute((field,type),(f,1),number), attribute((encoding,field),(e,0),(f,0)), attribute((encoding,field),(e,1),(f,1)), attribute(task,root,value), attribute((scale,type),(s,1),categorical), attribute((scale,channel),(s,1),text), attribute((scale,type),(s,0),categorical), attribute((scale,channel),(s,0),text), attribute((encoding,channel),(e,1),shape), attribute((encoding,channel),(e,0),text), attribute((mark,type),(m,0),tick), attribute((mark,channel),(m,0),shape), attribute((mark,channel),(m,0),text), attribute((mark,scale),(m,0),(s,0)), attribute((mark,scale),(m,0),(s,1)), attribute((encoding,scale_type),(e,0),categorical), attribute(mark_channel_discrete_or_binned,(m,0),text), attribute(mark_encoding_discrete_or_binned,(m,0),(e,0)), attribute(mark_encoding_cont,(m,0),(e,1)), attribute(mark_channel_cont,(m,0),shape), attribute(x_cardinality,(m,0),1), attribute(y_cardinality,(m,0),1), entity(field,root,(f,0)), entity(field,root,(f,1)), entity(view,root,(v,0)), entity(mark,(v,0),(m,0)), entity(encoding,(m,0),(e,0)), entity(encoding,(m,0),(e,1)), entity(scale,(v,0),(s,0)), entity(scale,(v,0),(s,1))]
+[&#39;bar_tick_area_line_without_continuous_x_y&#39;, &#39;shape_without_point&#39;, &#39;point_tick_bar_without_x_or_y&#39;, &#39;text_channel_without_text_mark&#39;, &#39;encoding_channel_without_scale&#39;, &#39;scale_repeat_channel&#39;, &#39;categorical_not_color&#39;]
 </pre></div>
 </div>
 </div>
@@ -655,11 +666,11 @@ If you write your own despription language, you need to set up the search space 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="api/programs.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="applications/recommendation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Programs</p>
+            <p class="prev-next-title">Visualization Recommendation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="bibliography.html" title="next page">
