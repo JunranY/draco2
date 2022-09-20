@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Run" href="run.html" />
@@ -216,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
   </a>
  </li>
 </ul>
@@ -532,7 +539,7 @@ title="Print to PDF"
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A dictionary representing the schema.</p>
@@ -555,7 +562,7 @@ title="Print to PDF"
 <dd class="field-even"><p><strong>ValueError</strong> – If the file has an unsupported data type.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A dictionary representing the schema.</p>

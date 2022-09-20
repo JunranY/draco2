@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Data and Schema" href="schema.html" />
@@ -216,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
   </a>
  </li>
 </ul>
@@ -511,17 +518,26 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
-<p>To express knowledge about visualizations, we first need a language to describe visualizations. Draco describes visualizations and context around them (e.g. properties of the data and task) as <em>facts</em>. In this section, we will describe the kinds of facts we chose for Draco.</p>
+<p>To express knowledge about visualizations, we first need a language to describe visualizations. Draco describes
+visualizations and context around them (e.g. properties of the data and task) as <em>facts</em>. In this section, we will
+describe the kinds of facts we chose for Draco.</p>
 <section id="draco-has-a-generic-specification-format">
 <h2>Draco has a Generic Specification Format<a class="headerlink" href="#draco-has-a-generic-specification-format" title="Permalink to this headline">#</a></h2>
-<p>The constraint solver <a class="reference external" href="https://potassco.org/clingo/">Clingo</a> reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">entity</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
+<p>The constraint solver <a class="reference external" href="https://potassco.org/clingo/">Clingo</a> reasons about the facts that describe a visualization. The
+specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">entity</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
 <section id="entities">
 <h3>Entities<a class="headerlink" href="#entities" title="Permalink to this headline">#</a></h3>
-<p>Entities describe objects. The facts <code class="docutils literal notranslate"><span class="pre">entity</span></code> describes what other entities associate with an entity. If an entity has no parents, we use a special identifier <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">entity(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
+<p>Entities describe objects. The facts <code class="docutils literal notranslate"><span class="pre">entity</span></code> describes what other entities associate with an entity. If an entity has
+no parents, we use a special identifier <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">entity(view,root,v1).</span></code> says that there is a view v1 on the
+root.</p>
 </section>
 <section id="attributes">
 <h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
-<p>Attribute facts specify properties of entities. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root entity) is 42</em>). Attribute names can be tuples, which allow us to distinguish the same attribute that exists on different entities. For example <code class="docutils literal notranslate"><span class="pre">attribute((field,type),f1,number).</span></code> specifies the type of a field (here <code class="docutils literal notranslate"><span class="pre">f1</span></code>) while <code class="docutils literal notranslate"><span class="pre">attribute((mark,type),m1,bar).</span></code> specifies the mark type (here of <code class="docutils literal notranslate"><span class="pre">m1</span></code>).</p>
+<p>Attribute facts specify properties of entities. For example, the number of rows in the dataset in this function form is
+<code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root entity) is 42</em>). Attribute names can be
+tuples, which allow us to distinguish the same attribute that exists on different entities. For example
+<code class="docutils literal notranslate"><span class="pre">attribute((field,type),f1,number).</span></code> specifies the type of a field (here <code class="docutils literal notranslate"><span class="pre">f1</span></code>) while <code class="docutils literal notranslate"><span class="pre">attribute((mark,type),m1,bar).</span></code>
+specifies the mark type (here of <code class="docutils literal notranslate"><span class="pre">m1</span></code>).</p>
 </section>
 </section>
 <section id="draco-s-specification-format-for-visualizations">
@@ -530,8 +546,13 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>You could design your own description language and use it with Draco or extend the existing language we use here. If you add new information, Draco will not immediately use the new facts until you also add constraints over the facts.</p>
 </div>
-<p>Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5" title="Leland Wilkinson. The grammar of graphics. In Handbook of computational statistics, pages 375–414. Springer, 2012.">Wil12</a>]</span> and Vega-Lite <span id="id2">[<a class="reference internal" href="../bibliography.html#id3" title="Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer. Vega-lite: a grammar of interactive graphics. IEEE transactions on visualization and computer graphics, 2016.">SMWH16</a>]</span>. While our specification format is inspired by Vega-Lite, Draco is not limited to the features Vega-Lite supports.</p>
-<p>At the core, a Draco program encodes visualizations in <a class="reference internal" href="view.html"><span class="doc std std-doc">views</span></a>. A view can contain one or more <a class="reference internal" href="mark.html"><span class="doc std std-doc">marks</span></a> that <a class="reference internal" href="encoding.html"><span class="doc std std-doc">encode</span></a> data and corresponding <a class="reference internal" href="scale.html"><span class="doc std std-doc">scales</span></a>. Besides the visualization, a Draco program can describe the <a class="reference internal" href="schema.html"><span class="doc std std-doc">data schema</span></a> and the primary <a class="reference internal" href="task.html"><span class="doc std std-doc">visualization task</span></a>. All of these definitions are extensible and you can add whatever other properties you care about to Draco.</p>
+<p>Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5" title="Leland Wilkinson. The grammar of graphics. In Handbook of computational statistics, pages 375–414. Springer, 2012.">Wil12</a>]</span> and Vega-Lite
+<span id="id2">[<a class="reference internal" href="../bibliography.html#id3" title="Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer. Vega-lite: a grammar of interactive graphics. IEEE transactions on visualization and computer graphics, 2016.">SMWH16</a>]</span>. While our specification format is inspired by Vega-Lite, Draco is not limited to the
+features Vega-Lite supports.</p>
+<p>At the core, a Draco program encodes visualizations in <a class="reference internal" href="view.html"><span class="doc std std-doc">views</span></a>. A view can contain one or more <a class="reference internal" href="mark.html"><span class="doc std std-doc">marks</span></a>
+that <a class="reference internal" href="encoding.html"><span class="doc std std-doc">encode</span></a> data and corresponding <a class="reference internal" href="scale.html"><span class="doc std std-doc">scales</span></a>. Besides the visualization, a Draco program can
+describe the <a class="reference internal" href="schema.html"><span class="doc std std-doc">data schema</span></a> and the primary <a class="reference internal" href="task.html"><span class="doc std std-doc">visualization task</span></a>. All of these definitions are
+extensible and you can add whatever other properties you care about to Draco.</p>
 </section>
 </section>
 

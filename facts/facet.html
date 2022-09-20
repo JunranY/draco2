@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Example Charts" href="examples.html" />
@@ -216,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
   </a>
  </li>
 </ul>
@@ -487,15 +494,13 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="facets">
 <h1>Facets<a class="headerlink" href="#facets" title="Permalink to this headline">#</a></h1>
-<p>With the facet operator, we can partition a dataset by a field and create a view for each field. The resulting chart is often called a small multiples chart.</p>
+<p>With the facet operator, we can partition a dataset by a field and create a view for each field. The resulting chart is
+often called a small multiples chart.</p>
 <section id="facet-properties">
 <h2>Facet Properties<a class="headerlink" href="#facet-properties" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">(facet,channel)</span></code>
-: The facet channel. Can be one of <code class="docutils literal notranslate"><span class="pre">col</span></code> and <code class="docutils literal notranslate"><span class="pre">row</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">(facet,field)</span></code>
-: The facet field.</p>
-<p><code class="docutils literal notranslate"><span class="pre">(facet,binning)</span></code>
-: Binning a numeric field for faceting.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(facet,channel)</span></code> : The facet channel. Can be one of <code class="docutils literal notranslate"><span class="pre">col</span></code> and <code class="docutils literal notranslate"><span class="pre">row</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(facet,field)</span></code> : The facet field.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(facet,binning)</span></code> : Binning a numeric field for faceting.</p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>

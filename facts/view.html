@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Marks" href="mark.html" />
@@ -216,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
   </a>
  </li>
 </ul>
@@ -488,11 +495,11 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="views">
 <h1>Views<a class="headerlink" href="#views" title="Permalink to this headline">#</a></h1>
 <p>A view can group marks and scales together. You need to define a view before you add any marks.</p>
-<p>If a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the chart).</p>
+<p>If a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the
+chart).</p>
 <section id="view-properties">
 <h2>View Properties<a class="headerlink" href="#view-properties" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">(view,coordinates)</span></code>
-: The coordinates system of the view. Can be one of <code class="docutils literal notranslate"><span class="pre">cartesian</span></code>, or <code class="docutils literal notranslate"><span class="pre">polar</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(view,coordinates)</span></code> : The coordinates system of the view. Can be one of <code class="docutils literal notranslate"><span class="pre">cartesian</span></code>, or <code class="docutils literal notranslate"><span class="pre">polar</span></code>.</p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
